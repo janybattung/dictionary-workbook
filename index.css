@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+}
+h1 {
+    text-align: center;
+}
+.SynonymsAntonymsDiv {
+    display: none;
+}
+.block{
+    display: block;
+}
+.mg-top-10{
+    margin-top:10px;
+}
+.hidden{
+    display: none;
+}

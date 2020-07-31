@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>My Dictionary</title>
+<!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+<div class="container">
+<h1>Find Your Word</h1>
+<form>
+<label class="search" for="words">Add a word:</label>
+<input type="text" name="search-word" id="js-word">
+<input type="submit" value="SEARCH" class="button"><br>
+<input type="button" value="Dictionary" class="button" id="dictBtn">
+<!-- <input type="button" value="Thesaurus" class="button" id="thesBtn"> -->
+</form>
+
+<section class="results">
+<h1 class="results-msg"></h1>
+<div class="result-words"></div>
+<div class="hidden" id="textToSpeechDiv">
+    <label class="block">Enter text to speech</label>
+    <textarea rows="3" id="textToSpeech"></textarea>
+    <label class="block">Voice Selection</label>
+    <select id="voiceSelectionDDL"><option value="en-US_AllisonVoice">American English (en-US): Allison (female, expressive, transformable)</option><option value="en-US_AllisonV3Voice">American English (en-US): AllisonV3 (female, enhanced dnn)</option><option value="en-US_EmilyV3Voice">American English (en-US): EmilyV3 (female, enhanced dnn)</option><option value="en-US_HenryV3Voice">American English (en-US): HenryV3 (male, enhanced dnn)</option><option value="en-US_KevinV3Voice">American English (en-US): KevinV3 (male, enhanced dnn)</option><option value="en-US_LisaVoice">American English (en-US): Lisa (female, transformable)</option><option value="en-US_LisaV3Voice">American English (en-US): LisaV3 (female, enhanced dnn)</option><option value="en-US_MichaelVoice">American English (en-US): Michael (male, transformable)</option><option value="en-US_MichaelV3Voice">American English (en-US): MichaelV3 (male, enhanced dnn)</option><option value="en-US_OliviaV3Voice">American English (en-US): OliviaV3 (female, enhanced dnn)</option><option value="ar-AR_OmarVoice">Arabic (ar-AR): Omar (male)</option><option value="pt-BR_IsabelaVoice">Brazilian Portuguese (pt-BR): Isabela (female)</option><option value="pt-BR_IsabelaV3Voice">Brazilian Portuguese (pt-BR): IsabelaV3 (female, enhanced dnn)</option><option value="en-GB_CharlotteV3Voice">British English (en-GB): CharlotteV3 (female, enhanced dnn)</option><option value="en-GB_JamesV3Voice">British English (en-GB): JamesV3 (male, enhanced dnn)</option><option value="en-GB_KateVoice">British English (en-GB): Kate (female)</option><option value="en-GB_KateV3Voice">British English (en-GB): KateV3 (female, enhanced dnn)</option><option value="es-ES_EnriqueVoice">Castilian Spanish (es-ES): Enrique (male)</option><option value="es-ES_EnriqueV3Voice">Castilian Spanish (es-ES): EnriqueV3 (male, enhanced dnn)</option><option value="es-ES_LauraVoice">Castilian Spanish (es-ES): Laura (female)</option><option value="es-ES_LauraV3Voice">Castilian Spanish (es-ES): LauraV3 (female, enhanced dnn)</option><option value="zh-CN_LiNaVoice">Chinese, Mandarin (zh-CN): LiNa (female)</option><option value="zh-CN_WangWeiVoice">Chinese, Mandarin (zh-CN): WangWei (Male)</option><option value="zh-CN_ZhangJingVoice">Chinese, Mandarin (zh-CN): ZhangJing (female)</option><option value="nl-NL_EmmaVoice">Dutch (nl-NL): Emma (female)</option><option value="nl-NL_LiamVoice">Dutch (nl-NL): Liam (male)</option><option value="fr-FR_NicolasV3Voice">French (fr-FR): NicolasV3 (male, enhanced dnn)</option><option value="fr-FR_ReneeVoice">French (fr-FR): Renee (female)</option><option value="fr-FR_ReneeV3Voice">French (fr-FR): ReneeV3 (female, enhanced dnn)</option><option value="de-DE_BirgitVoice">German (de-DE): Birgit (female)</option><option value="de-DE_BirgitV3Voice">German (de-DE): BirgitV3 (female, enhanced dnn)</option><option value="de-DE_DieterVoice">German (de-DE): Dieter (male)</option><option value="de-DE_DieterV3Voice">German (de-DE): DieterV3 (male, enhanced dnn)</option><option value="de-DE_ErikaV3Voice">German (de-DE): ErikaV3 (female, enhanced dnn)</option><option value="it-IT_FrancescaVoice">Italian (it-IT): Francesca (female)</option><option value="it-IT_FrancescaV3Voice">Italian (it-IT): FrancescaV3 (female, enhanced dnn)</option><option value="ja-JP_EmiVoice">Japanese (ja-JP): Emi (female)</option><option value="ja-JP_EmiV3Voice">Japanese (ja-JP): EmiV3 (female, enhanced dnn)</option><option value="ko-KR_YoungmiVoice">Korean (ko-KR): Youngmi (female)</option><option value="ko-KR_YunaVoice">Korean (ko-KR): Yuna (female)</option><option value="es-LA_SofiaVoice">Latin American Spanish (es-LA): Sofia (female)</option><option value="es-LA_SofiaV3Voice">Latin American Spanish (es-LA): SofiaV3 (female, enhanced dnn)</option><option value="es-US_SofiaVoice">North American Spanish (es-US): Sofia (female)</option><option value="es-US_SofiaV3Voice">North American Spanish (es-US): SofiaV3 (female, enhanced dnn)</option></select>
+    <div class="block mg-top-10">
+    <button onclick="Speak(this)">Speak</button>
+    <button onclick="Reset()">Reset</button>
+    </div>
+</div>
+</section>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src="index.js"></script>
+</body>
+</html>
