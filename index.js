@@ -99,14 +99,14 @@ if(this.lexemes && this.lexemes.length){
 
 //Check for definitions
 if(this.lexemes && this.lexemes.length){
-html += `<p><button onclick='ShowSentensesExample()'>Examples of Sentenses</button></p>`;
+html += `<p><button onclick='ShowSentencesExample()'>Examples of Sentences</button></p>`;
 $(this.lexemes).each(function(){
 //Check if this item has "senses"
 if(this.senses && this.senses.length){ 
     $(this.senses).each(function(i,item){
 if(this.usageExamples && this.usageExamples.length){
     $(this.usageExamples).each(function(){
-    html += `<p style='display:none' class='SentensesExample'>${this}<p>`;
+    html += `<p style='display:none' class='SentencesExample'>${this}<p>`;
 })
     }
     })
@@ -162,12 +162,12 @@ function watchForm() {
 }
     
 
-function ShowSentensesExample(){
-    if($(".SentensesExample").css('display') === 'block'){ 
-        $(".SentensesExample,.SynonymsAntonymsDiv").css('display','none');
+function ShowSentencesExample(){
+    if($(".SentencesExample").css('display') === 'block'){ 
+        $(".SentencesExample,.SynonymsAntonymsDiv").css('display','none');
     }
     else{
-        $(".SentensesExample").css('display','block');
+        $(".SentencesExample").css('display','block');
     }
     
 }
