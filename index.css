@@ -4,12 +4,76 @@
 body {
     display: flex;
     justify-content: center;
+    background-image: url("images/background-image.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Frank Ruhl Libre', serif;
+    margin: 0;
+}
+.container {
+    background-color: white;
+    opacity: 0.9;
+    background-size: cover;
+    padding: 15px;
+    align-items: center;
+    margin: 30px;
+    align-items: center;
+}
+.form {
+    text-align: center;
 }
 h1 {
     text-align: center;
 }
+h4 {
+    color: #ff5722;
+}
+.block {
+    color: #206a5d;
+    font-weight: bold;
+}
+.srcButton {
+    background-color: #8bcdcd;
+    border: 1px solid #8bcdcd;
+    padding: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Frank Ruhl Libre', serif;
+}
+.button {
+    background-color: #ffe78f;
+    padding: 7px;
+    margin: 10px 5px 5px 5px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 5px 5px 5px grey;
+    cursor: pointer;
+    outline: none;
+}
+.button:hover {
+    background-color: #f6ab6c;
+}
+.button:active {
+    background-color: #ffe78f;
+    box-shadow: 5px 5px 5px grey;
+    transform: translateY(3px);
+}
+#js-word {
+    height: 23px;
+    border: 1px solid grey;
+    font-family: 'Frank Ruhl Libre', serif;
+}
 .SynonymsAntonymsDiv {
     display: none;
+}
+#textToSpeech {
+    font-family: 'Frank Ruhl Libre', serif;
+}
+#voiceSelectionDDL {
+    font-family: 'Frank Ruhl Libre', serif;
 }
 .block{
     display: block;
@@ -19,4 +83,45 @@ h1 {
 }
 .hidden{
     display: none;
+}
+@media only screen and (min-width: 1025px){ /*desktop*/ 
+#js-word {
+    width: 185px;
+    height: 40px;
+    font-size: 18px;
+    margin: 5px;
+}
+.srcButton {
+    height: 40px;
+    width: 80px;
+    font-size: 16px;
+    border: none;
+}
+.container {
+    margin: 40px;
+}
+}
+
+@media only screen and (max-width: 1025px) { /*tablet*/
+
+#js-word {
+    width: 300px;
+    height: 50px;
+    font-size: 18px;
+}
+.srcButton {
+    height: 50px;
+    width: 100px;
+    font-size: 16px;
+}
+.container {
+    background-size: cover;
+    width: 70%; 
+}
+.button {
+    width: 40%;
+    height: 50px;
+    font-size: 18px;
+    margin-top: 20px;
+}
 }
