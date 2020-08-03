@@ -149,7 +149,7 @@ function displayResults(responseJson) {
 				})
 			}
 
-			// html += `<button class="button" onclick="ShowHideSpeechContent()">Convert text to speech</button>`
+			html += `<button class="button" onclick="ShowHideSpeechContent()">Convert text to speech</button>`
 
 		});
 	} else {
