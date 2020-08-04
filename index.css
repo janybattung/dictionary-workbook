@@ -31,7 +31,7 @@ h1 {
 h4 {
     color: #ff5722;
 }
-p {
+.example {
     font-size: 12px;
     margin-top: 0;
     /* color: gray; */
