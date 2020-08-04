@@ -111,8 +111,10 @@ function displayResults(responseJson) {
 			}
 
 			//Check for definitions
+			let sentencesExample ='';
 			if (this.lexemes && this.lexemes.length) {
-				html += `<p><button class='button' onclick='ShowSentencesExample()'>Examples of Sentences</button></p>`;
+				//html += `<p><button class='button' onclick='ShowSentencesExample()'>Examples of Sentences</button></p>`;
+			   sentencesExample = `<p><button class='button' onclick='ShowSentencesExample()'>Examples of Sentences</button></p>`;
 				$(this.lexemes).each(function () {
 					//Check if this item has "senses"
 					if (this.senses && this.senses.length) {
@@ -120,7 +122,7 @@ function displayResults(responseJson) {
 							if (this.usageExamples && this.usageExamples.length) {
 								found=true
 								$(this.usageExamples).each(function () {
-									html += `<p style='display:none' class='SentencesExample'>${this}<p>`;
+									sentencesExample += `<p style='display:none' class='SentencesExample'>${this}<p>`;
 								})
 							}
 							
@@ -128,6 +130,10 @@ function displayResults(responseJson) {
 					}
 				})
 			}
+			if (!found) {
+				sentencesExample += `<p style='display:none' class='SentencesExample'>"Not found"<p>`;
+			}
+			html += sentencesExample;
 			//Check for definitions
 			if (this.lexemes && this.lexemes.length) {
 				html += `<p><button style='margin-top: 10px;' class='button' onclick='ShowSynonymsAntonyms()'>Synonyms/Antonyms</button></p>`;
@@ -138,7 +144,7 @@ function displayResults(responseJson) {
 						html += `<div class='SynonymsAntonymsDiv' style='display:none'><h4>Synonyms</h4>`;
 						$(this.synonymSets).each(function (i, item) {
 							if (this.synonyms && this.synonyms.length) {
-								html += `<p>${this.synonyms.toString()}</p>`;
+								html += `<p>${this.synonyms.join(', ')}</p>`;
 							}
 						})
 						html += "</div>"
@@ -150,7 +156,7 @@ function displayResults(responseJson) {
 						html += `<div class='SynonymsAntonymsDiv' style='display:none'><h4>Antonyms</h4>`;
 						$(this.antonymSets).each(function (i, item) {
 							if (this.antonyms && this.antonyms.length) {
-								html += `<p>${this.antonyms.toString()}</p>`;
+								html += `<p>${this.antonyms.join(', ')}</p>`;
 							}
 						})
 						html += "</div>"
@@ -165,9 +171,9 @@ function displayResults(responseJson) {
 	} else {
 		html += `<p>No result Found!</p>`;
 	}
-	if (!found) {
-		html += `<p style='display:none' class='SentencesExample'>Not found<p>`;
-	}
+	// if (!found) {
+	// 	html += `<p style='display:none' class='SentencesExample'>Not found<p>`;
+	// }
 	if (!antonymsFound) {
 		html += `<div class='SynonymsAntonymsDiv' style='display:none'><h4>Antonyms</h4>`;
 		html += `<p>"Not found"</p>`;
