@@ -6,7 +6,7 @@ https://janybattung.github.io/dictionary-workbook/
 [GitHub](http://github.com)
 
 ## Screenshots
-![word search](/images/workbook1.png)
+![word search](images/workbook1.png)
 ![definitions](/images/workbook2.png)
 ![examples of sentences](/images/workbook3.png)
 ![synonyms/antonyms](/images/workbook4.png)
