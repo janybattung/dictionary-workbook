@@ -193,10 +193,8 @@ function watchForm() {
         event.preventDefault();
         word = $('#js-word').val().toLowerCase();
         getData(word);
-    })
+	})
 }
-
-$(watchform);
 
 function ShowSentencesExample() {
     if ($(".SentencesExample").css('display') === 'block') {
@@ -237,3 +235,6 @@ function Reset() {
     let getTheFirstOpt = $("#voiceSelectionDDL option:first").val();
     $("#voiceSelectionDDL").val(getTheFirstOpt);
 }
+$(function () {
+	watchForm();
+})
