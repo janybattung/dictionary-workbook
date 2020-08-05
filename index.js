@@ -87,15 +87,16 @@ function displayResults(responseJson) {
 	if (responseJson.entries.length) {
 		$(responseJson.entries).each(function () {
 
+			// Will add this functionality later on
 			//Check for audio
-			if (this.pronunciations && this.pronunciations.length) {
-				$(this.pronunciations).each(function () {
-					//check if has audio
-					if (this.audio && this.context.regions && this.context.regions.length && this.context.regions.every(e => e == "United States")) {
-						html += `<p><input type="button" class="button" value="play" onclick="playMusic('${this.audio.url}')" /></p>`
-					}
-				});
-			}
+			// if (this.pronunciations && this.pronunciations.length) {
+			// 	$(this.pronunciations).each(function () {
+			// 		//check if has audio
+			// 		if (this.audio && this.context.regions && this.context.regions.length && this.context.regions.every(e => e == "United States")) {
+			// 			html += `<p><input type="button" class="button" value="play" onclick="playMusic('${this.audio.url}')" /></p>`
+			// 		}
+			// 	});
+			// }
 
 			//Check for definitions
 			if (this.lexemes && this.lexemes.length) {
@@ -165,15 +166,11 @@ function displayResults(responseJson) {
 				})
 			}
 
-			// html += `<button class="button" onclick="ShowHideSpeechContent()">Convert text to speech</button>`
-
 		});
 	} else {
 		html += `<p>No result Found!</p>`;
 	}
-	// if (!found) {
-	// 	html += `<p style='display:none' class='SentencesExample'>Not found<p>`;
-	// }
+	
 	if (!antonymsFound) {
 		html += `<div class='SynonymsAntonymsDiv' style='display:none'><h4>Antonyms</h4>`;
 		html += `<p>"Not found"</p>`;
@@ -198,7 +195,7 @@ function watchForm() {
 	})
 	$('form').submit(event => {
 		event.preventDefault();
-		word = $('#js-word').val();
+		word = $('#js-word').val().toLowerCase();
 		console.log(word);
 		getData(word);
 	})
